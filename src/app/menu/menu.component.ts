@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
  getProducts(): void {
   this.productService.getAll().subscribe(
     (data:Product[])=> {
-      // console.log(data);
+      console.log(data);
     this.products = data; 
     }
   )

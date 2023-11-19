@@ -2,7 +2,7 @@
 include 'database.php';
 $products = [];
 
-$sql = "SELECT * FROM rpos_products";
+$sql = "SELECT * FROM :rpos_products";
 if($result = $db->query($sql))
 {
 	$i = 0;
