@@ -7,11 +7,11 @@ import {Product } from './product';
   providedIn: 'root'
 })
 export class ProductPointService {
-  baseUrl = 'http://localhost/angular_project_template/restaturant/api';
+  baseUrl = 'http://localhost/angular_project_Restaturent/restaturant/api';
 
   constructor(private http: HttpClient) { }
   getAll(){
-    return this.http.get(`${this.baseUrl}/menu.php`).pipe(
+    return this.http.get(`${this.baseUrl}/menuproduct.php`).pipe(
       map((res:any) => {
         return res['data'];
       })
