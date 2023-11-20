@@ -6,7 +6,7 @@ check_login();
 //Delete Staff
 if (isset($_GET['delete'])) {
   $id = $_GET['delete'];
-  $adn = "DELETE FROM  rpos_customers  WHERE  customer_id = ?";
+  $adn = "DELETE FROM  booking_tb  WHERE id = ?";
   $stmt = $mysqli->prepare($adn);
   $stmt->bind_param('s', $id);
   $stmt->execute();
@@ -56,32 +56,35 @@ require_once('partials/_head.php');
                 <thead class="thead-light">
                   <tr>
                     <th scope="col">Full Name</th>
-                    <th scope="col">Contact Number</th>
-                    <th scope="col">Email</th>
+                   <th scope="col">Email</th>
+                    <th scope="col">phone Number</th>
+                    <th scope="col">Person</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
-                  $ret = "SELECT * FROM  rpos_customers  ORDER BY `rpos_customers`.`created_at` DESC ";
+                  $ret = "SELECT * FROM  booking_tb ";
                   $stmt = $mysqli->prepare($ret);
                   $stmt->execute();
                   $res = $stmt->get_result();
                   while ($cust = $res->fetch_object()) {
                   ?>
                     <tr>
-                      <td><?php echo $cust->customer_name; ?></td>
-                      <td><?php echo $cust->customer_phoneno; ?></td>
-                      <td><?php echo $cust->customer_email; ?></td>
+                      <td><?php echo $cust->name; ?></td>
+                      <td><?php echo $cust->email; ?></td>
+                      <td><?php echo $cust->number; ?></td>
+                      <td><?php echo $cust->person; ?></td>
+                      <td><?php // echo $cust->customer_email; ?></td>
                       <td>
-                        <a href="customes.php?delete=<?php echo $cust->customer_id; ?>">
+                        <a href="customes.php?delete=<?php echo $cust->id; ?>">
                           <button class="btn btn-sm btn-danger">
                             <i class="fas fa-trash"></i>
                             Delete
                           </button>
                         </a>
 
-                        <a href="update_customer.php?update=<?php echo $cust->customer_id; ?>">
+                        <a href="update_customer.php?update=<?php echo $cust->id; ?>">
                           <button class="btn btn-sm btn-primary">
                             <i class="fas fa-user-edit"></i>
                             Update
