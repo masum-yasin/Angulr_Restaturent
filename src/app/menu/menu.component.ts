@@ -18,6 +18,8 @@ export class MenuComponent implements OnInit {
   prod_name:'',
   prod_img:'',
   prod_price:0,
+  prod_desc:'',
+  created_at:0
  
  };
  constructor(private productService: ProductPointService){
