@@ -14,6 +14,9 @@ onSubmit(data:any){
   this.http.post('http://localhost/angular_project_Restaturent/restaturant/api/contact.php',data).
   subscribe(result=>{
     console.log(result);
+    if(result){
+      alert("suessfully Inserted")
+    }
   })
 
 

@@ -93,15 +93,21 @@ while ($admin = $res->fetch_object()) {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="customes.php">
-              <i class="fas fa-users text-primary"></i> Customers
+            <a class="nav-link" href="booking.php">
+              <i class="fas fa-users text-primary"></i>Booking
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="products.php">
-              <i class="ni ni-bullet-list-67 text-primary"></i>Menu
+              <i class="ni ni-bullet-list-67 text-primary"></i>Product_Menu
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.php">
+              <i class="ni ni-cart text-primary"></i>Contact
+            </a>
+          </li>
+          <li class="nav-item">
           <li class="nav-item">
             <a class="nav-link" href="orders.php">
               <i class="ni ni-cart text-primary"></i> Orders

@@ -5,9 +5,10 @@ include('config/checklogin.php');
 check_login();
 if (isset($_GET['delete'])) {
   $id = intval($_GET['delete']);
+  // echo" DELETE FROM  rpos_products  WHERE  prod_id = ?";
   $adn = "DELETE FROM  rpos_products  WHERE  prod_id = ?";
   $stmt = $mysqli->prepare($adn);
-  $stmt->bind_param('s', $id);
+  $stmt->bind_param('i', $id);
   $stmt->execute();
   $stmt->close();
   if ($stmt) {

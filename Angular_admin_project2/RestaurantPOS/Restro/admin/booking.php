@@ -12,7 +12,7 @@ if (isset($_GET['delete'])) {
   $stmt->execute();
   $stmt->close();
   if ($stmt) {
-    $success = "Deleted" && header("refresh:1; url=customes.php");
+    $success = "Deleted" && header("refresh:1; url=booking.php");
   } else {
     $err = "Try Again Later";
   }
@@ -48,7 +48,7 @@ require_once('partials/_head.php');
             <div class="card-header border-0">
               <a href="add_customer.php" class="btn btn-outline-success">
                 <i class="fas fa-user-plus"></i>
-                Add New Customer
+                Add New Booking
               </a>
             </div>
             <div class="table-responsive">
@@ -77,7 +77,7 @@ require_once('partials/_head.php');
                       <td><?php echo $cust->person; ?></td>
                       <td><?php // echo $cust->customer_email; ?></td>
                       <td>
-                        <a href="customes.php?delete=<?php echo $cust->id; ?>">
+                        <a href="booking.php?delete=<?php echo $cust->id; ?>">
                           <button class="btn btn-sm btn-danger">
                             <i class="fas fa-trash"></i>
                             Delete

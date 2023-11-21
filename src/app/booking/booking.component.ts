@@ -13,6 +13,9 @@ export class BookingComponent {
     this.http.post('http://localhost/angular_project_Restaturent/restaturant/api/booking.php',data).
     subscribe(result=>{
       console.log(result);
+      if(result){
+        alert("successfully Inserted")
+      }
     })
   
   
